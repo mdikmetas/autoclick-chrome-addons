@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 280px; font: 13px sans-serif; margin: 0; padding: 14px; }
+  h3 { margin: 0 0 10px; }
+  label { display: block; margin: 10px 0 3px; font-weight: 600; }
+  input[type=number], input[type=text] { width: 100%; box-sizing: border-box; padding: 6px; }
+  button { width: 100%; padding: 8px; margin-top: 8px; cursor: pointer; border: 0; border-radius: 6px; font-size: 13px; }
+  #pick { background: #1976d2; color: #fff; }
+  #start { background: #2e7d32; color: #fff; }
+  #stop { background: #c62828; color: #fff; }
+  #pos, #status { margin-top: 6px; color: #555; }
+  .row { display: flex; align-items: center; gap: 6px; margin-top: 6px; }
+  .row input[type=checkbox] { margin: 0; }
+</style>
+</head>
+<body>
+  <h3>AutoClick</h3>
+  <button id="pick">1) Tıklanacak yeri seç</button>
+  <div id="pos">Konum: —</div>
+
+  <label>Hız (milisaniye, 1000 = 1 sn)</label>
+  <input type="number" id="interval" min="10" value="100">
+
+  <label>Tıklama sayısı</label>
+  <input type="number" id="count" min="1" value="10">
+  <div class="row"><input type="checkbox" id="unlimited"><span>Limitsiz</span></div>
+
+  <label>Durdurma kısayolu (kutuya tıkla, tuşlara bas)</label>
+  <input type="text" id="hotkey" readonly>
+
+  <button id="start">Başlat</button>
+  <button id="stop">Durdur</button>
+  <div id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
